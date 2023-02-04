@@ -1,0 +1,11 @@
+:root {
+    background-color: #f9c;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+}
