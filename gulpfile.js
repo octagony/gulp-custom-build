@@ -58,6 +58,7 @@ function serve() {
 }
 
 function html() {
+  panini.refresh();
   return src(path.src.html, { base: srcPath })
     .pipe(
       plumber({
@@ -68,6 +69,13 @@ function html() {
           })(err);
           this.emit("end");
         },
+      })
+    )
+    .pipe(
+      panini({
+        root: srcPath,
+        layouts: srcPath + "templates/layouts",
+        partials: srcPath + "templates/partials",
       })
     )
     .pipe(dest(path.build.html))
