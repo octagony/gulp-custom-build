@@ -76,6 +76,7 @@ function html() {
         root: srcPath,
         layouts: srcPath + "templates/layouts",
         partials: srcPath + "templates/partials",
+        data: srcPath + "templates/data",
       })
     )
     .pipe(dest(path.build.html))
